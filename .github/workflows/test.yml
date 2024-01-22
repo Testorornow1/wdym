@@ -1,22 +1,18 @@
-name: Anyviewer tester
-
- on:
-    workflows_dispatch:
-
-   jobs:
-    build:
-     runs-on: windows-latest
-
-     steps:
-     name: Dowloading & Setting Up
-     run: |
-      echo "EMAIL_SECRET-testwin12390@gmail.com"> secrets.txt
-      echo "PASSWORD SECRET-testwin12345" >> secrets.txt
-      Invoke-WebRequest -Uri "https://www.dropbox.com/sh/1567nu2ff84q4dr/AACTILIbK9bi5yQLtp221pTJa/down.bat?d1-1" -OutFile "down.bat"
-      cmd /c down.bat
-
-  -  name: Login Details
-     run: cmd /c show.bat
-
-  -  name: Time Counter
-     run: Start-Sleep -Seconds 14600
+name: AnyViewer Windows RDP
+on:
+workflow_dispatch:
+jobs:
+build:
+runs-on: windows-latest
+steps:
+- name: Downloading & Setting Up
+run: |
+echo "EMAIL_SECRET=testwin12390@gmail.com"> secrets.txt
+echo "PASSWORD_SECRET-testwin12345" >> secrets.txt
+Invoke-WebRequest -Uri "https://www.dropbox.com/sh/1567nu2ff84q4dr/AACTILIbK9bi5yQLtp221pTJa/down.bat?d1-1"
+cmd/c down.bat
+-name: Login Details
+run: cmd /c show.bat
+-name: Time Counter
+run: Start-Sleep -Seconds 14600
+File "down.bat"
