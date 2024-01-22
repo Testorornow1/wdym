@@ -1,7 +1,7 @@
 name: Anyviewer tester
 
  on:
-   workflows_dispatch:
+    workflows_dispatch:
 
    jobs:
     build:
